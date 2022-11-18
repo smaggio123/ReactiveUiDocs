@@ -1,0 +1,36 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ReactiveUiDocs.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="ReactiveUiDocs.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+		xmlns:rxui="clr-namespace:Avalonia.ReactiveUI;assembly=Avalonia.ReactiveUI"
+		xmlns:reactiveUi="http://reactiveui.net"
+        Title="ReactiveUiDocs">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+		
+        <rxui:RoutedViewHost 
+            Grid.Row="0" 
+            x:Name="RoutedViewHost"
+            HorizontalContentAlignment="Stretch"
+            VerticalContentAlignment="Stretch" />
+		
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="15">
+            <Button x:Name="GoNextButton" Content="Go to first" />
+            <Button x:Name="GoBackButton" Content="Go back" Margin="5 0 0 0" />
+        </StackPanel>
+    </Grid>
+	
+
+</Window>
